@@ -257,3 +257,7 @@ textarea {
   color:white;
   text-decoration: none;
 }
+.ampm {
+    font-size: 0.5em; /* Adjust the size as needed */
+    vertical-align: super; /* Align vertically */
+}
