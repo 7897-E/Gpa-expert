@@ -1,0 +1,259 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+
+#settings-button {
+  position: fixed; /* Change to fixed positioning for better responsiveness */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Ensures it is above other elements */
+    padding: 5px; /* Added padding for better touch target */
+}
+@media (max-width: 600px) {
+    #settings-button {
+        top: 5px; /* Adjusts positioning on smaller screens */
+        left: 5px; /* Adjusts positioning on smaller screens */
+    }
+}
+#theme-switcher {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#settings-icon-img{
+  width: 40px;
+  height: 40px;
+}
+#theme-icon-img {
+    width: 36px;
+    height: 36px;
+}
+
+.light-theme {
+    background-color: #fff;
+    color: #000000;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #ffffff;
+}
+.light-theme #settings-button {
+    color: #000000;
+}
+
+.dark-theme #settings-button {
+    color: #ffffff;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.time-input {
+    padding: 5px;
+    font-size: 16px;
+    width: 80px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme .time-input {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.dark-theme .time-input {
+    background-color: #555;
+    color: #fff;
+}
+
+.tap-btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.dark-theme .tap-btn {
+    background-color: #0056b3;
+}
+
+/* Pressed state styles */
+.tap-btn.pressed {
+    background-color: #003366; /* Darker shade for pressed state */
+}
+
+.tap-btn:active {
+    transform: scale(0.95); /* Slightly shrink when pressed */
+}
+
+#submit-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+#result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 36px; /* Larger text */
+    font-weight: bold; /* Bold text */
+}
+.clock {
+    font-family: 'Roboto', sans-serif; /* Same font as GPA numbers */
+    font-size: 36px; /* Adjust size as needed */
+    color: inherit; /* Inherit color based on theme */
+    text-align: center;
+    flex-grow: 1; /* Allow clock to take up available space */
+    text-align: center;
+}
+.invisible-button {
+    position: fixed;
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the right */
+    width: 50px; /* Width of the button */
+    height: 50px; /* Height of the button */
+    background-color: transparent; /* Make it transparent */
+    border: none; /* Remove border */
+    cursor: default; /* Pointer cursor on hover */
+    z-index: 10; /* Ensure it is above other elements */
+}
+
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 100px; /* Fixed width */
+  height:75px;
+}
+
+.light-theme .popup {
+    background-color: white;
+    color: black;
+}
+
+.dark-theme .popup {
+    background-color: #333;
+    color: white;
+}
+
+.popup textarea {
+    width: 100%;
+    height: 20px;
+    resize:none;
+    margin-bottom: 20px;
+}
+
+.popup-submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    display: block;
+    text-align:center;
+}
+
+.popup-submit-btn:hover {
+    background-color: #218838;
+}
+
+.popup-submit-btn:active {
+    background-color: #1e7e34;
+}
+
+/* Back button styles */
+#back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#back-icon-img {
+    width: 40px;
+    height: 40px;
+    top:10px;
+    left:10px;
+}
+.buttons {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #444444;
+  transition: background-color 0.3s;
+}
+.buttonsn {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #444444;
+  transition: background-color 0.3s; /* Add a smooth transition for the background color */
+}
+
+.buttonsn:hover {
+  background-color: #990000; /* Change the background color on hover to red */
+}
+.buttons:hover {
+  background-color: #999999; /* Change the background color on hover to red */
+}
+.buttonlink {
+  color:white;
+  text-decoration: none;
+}
