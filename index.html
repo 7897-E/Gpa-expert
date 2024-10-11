@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme"> <!-- Default to light theme -->
+    <header>
+      <button id="extra-button" class="invisible-button" onclick="createPopup()"></button>
+      <div class="clock" id="clock">00:00:00</div>
+        <button id="theme-switcher">
+            <img id="theme-icon-img" src="https://cdn.glitch.global/37f7caaf-a54e-4f69-a4e1-8ae7e91c6e79/moon.png?v=1728608444414" alt="Theme Switcher">
+        </button>
+
+    </header>
+    <main>
+        <div class="input-container">
+            <div class="input-group">
+                <input class="time-input" type="text" pattern="^(0?[0-9]|[1][0-9]|2[0-3])(\.[0-9])?$"  inputmode="numeric" maxlength="5" placeholder="00.00">
+                <button class="tap-btn">Tap</button>
+            </div>
+            <div class="input-group">
+                <input class="time-input" type="text" pattern="^(0?[0-9]|[1][0-9]|2[0-3])(\.[0-9])?$"  inputmode="numeric" maxlength="5" placeholder="00.00">
+                <button class="tap-btn">Tap</button>
+            </div>
+            <div class="input-group">
+                <input class="time-input" type="text" pattern="^(0?[0-9]|[1][0-9]|2[0-3])(\.[0-9])?$"  inputmode="numeric" maxlength="5" placeholder="00.00">
+                <button class="tap-btn">Tap</button>
+            </div>
+            <div class="input-group">
+                <input class="time-input" type="text" pattern="^(0?[0-9]|[1][0-9]|2[0-3])(\.[0-9])?$"  inputmode="numeric" maxlength="5" placeholder="00.00">
+                <button class="tap-btn">Tap</button>
+            </div>
+            <div class="input-group">
+                <input class="time-input" type="text" pattern="^(0?[0-9]|[1][0-9]|2[0-3])(\.[0-9])?$"  inputmode="numeric" maxlength="5" placeholder="00.00">
+                <button class="tap-btn">Tap</button>
+            </div>
+            <div class="input-group">
+                <input class="time-input" type="text" pattern="^(0?[0-9]|[1][0-9]|2[0-3])(\.[0-9])?$"  inputmode="numeric" maxlength="5" placeholder="00.00">
+                <button class="tap-btn">Tap</button>
+            </div>
+            <div class="input-group">
+                <input class="time-input" type="text" pattern="^(0?[0-9]|[1][0-9]|2[0-3])(\.[0-9])?$"  inputmode="numeric" maxlength="5" placeholder="00.00">
+                <button class="tap-btn">Tap</button>
+            </div>
+        </div>
+        <button id="submit-btn">Submit</button>
+        <div id="result"></div>
+    </main>
+    <script src="extra.js"></script>
+    <script src="script.js"></script>
+    <script src="gpa.js"></script>
+  <script src="clock.js"></script>
+</body>
+</html>
