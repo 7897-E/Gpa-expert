@@ -1,8 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     const invisibleButton = document.getElementById('invisible-button');
-    invisibleButton.addEventListener('click', createPopup);
+    invisibleButton.addEventListener('click', () => {
+        if (getCookie('verified') === 'true') {
+            window.location.href = 'clock.html';
+        } else {
+            createPopup();
+        }
+    });
 });
-
+function createPopUp(){
+  const verifyCookie = getCookie('verified');
+  if (verifyCookie !== 'true') {
+        createPopup();
+    }else{
+        setCookie('verified', 'true', 365);
+        window.location.href = 'clock.html';
+    }
+}
 // Function to create and display the popup
 function createPopup() {
     // Create a pop-up div
@@ -15,7 +29,7 @@ function createPopup() {
     textField.style.width = '100px';  // Fixed width
     textField.style.height = '20px'; // Fixed height
 
-    // Create a submit butt5on
+    // Create a submit button
     const submitButton = document.createElement('button');
     submitButton.classList.add('popup-submit-btn');
     submitButton.innerText = 'Submit';
@@ -75,4 +89,16 @@ function setCookie(name, value, days) {
     d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
     const expires = "expires=" + d.toUTCString();
     document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to get a cookie
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
 }

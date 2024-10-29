@@ -128,3 +128,7 @@ function getCookie(name) {
     }
     return "";
 }
+function back(){
+  window.open('index.html', '_blank'); 
+  window.close();
+}
