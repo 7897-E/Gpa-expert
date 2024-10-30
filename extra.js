@@ -60,7 +60,7 @@ function handlePopupSubmit() {
     const inputText = textField.value;
     
     // Check if the input text equals the passcode
-    if (inputText === '185656') {
+    if (inputText === '185656'|| inputText === '127576') {
         setCookie('verified', 'true', 365);
         window.location.href = 'clock.html';
     } else {
