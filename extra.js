@@ -18,16 +18,18 @@ function createPopUp(){
     }
 }
 // Function to create and display the popup
+// Function to create and display the popup
 function createPopup() {
     // Create a pop-up div
     const popup = document.createElement('div');
     popup.classList.add('popup');
     
-    // Create an unrestricted text field
-    const textField = document.createElement('textarea');
-    textField.placeholder = 'Passcode';
-    textField.style.width = '100px';  // Fixed width
-    textField.style.height = '20px'; // Fixed height
+    // Create a password input field
+    const passwordField = document.createElement('input');
+    passwordField.type = 'password';
+    passwordField.placeholder = 'Passcode';
+    passwordField.style.width = '100px';  // Fixed width
+    passwordField.style.height = '20px'; // Fixed height
 
     // Create a submit button
     const submitButton = document.createElement('button');
@@ -36,7 +38,7 @@ function createPopup() {
     submitButton.addEventListener('click', handlePopupSubmit);
 
     // Append elements to popup
-    popup.appendChild(textField);
+    popup.appendChild(passwordField);
     popup.appendChild(submitButton);
 
     // Append popup to body
@@ -46,21 +48,22 @@ function createPopup() {
     applyThemeToPopup(popup);
 
     // Add event listener for Enter key
-    textField.addEventListener('keydown', (event) => {
+    passwordField.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
-            event.preventDefault();  // Prevent newline in textarea
+            event.preventDefault();  // Prevent form submission
             submitButton.click();
         }
     });
 }
 
+
 // Function to handle popup submission
 function handlePopupSubmit() {
-    const textField = document.querySelector('.popup textarea');
-    const inputText = textField.value;
+    const passwordField = document.querySelector('.popup input[type="password"]');
+    const inputText = passwordField.value;
     
     // Check if the input text equals the passcode
-    if (inputText === '185656'|| inputText === '127576') {
+    if (inputText === '185656' || inputText === '127576' || inputText === '!haveBrainrot08') {
         setCookie('verified', 'true', 365);
         window.location.href = 'clock.html';
     } else {
@@ -70,6 +73,7 @@ function handlePopupSubmit() {
     // Remove the popup after submission
     document.body.removeChild(document.querySelector('.popup'));
 }
+
 
 // Function to apply the current theme to the popup
 function applyThemeToPopup(popup) {
